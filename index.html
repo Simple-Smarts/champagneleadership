@@ -12,12 +12,12 @@
     
     <style>
         :root {
-            --champagne: #F7E7CE;
-            --gold: #C9A961;
-            --deep-navy: #1a2332;
-            --slate: #2d3e50;
+            --cardinal-red: #C41E3A;
+            --coral-red: #E85D75;
+            --deep-burgundy: #8B1E3F;
+            --dark-red-brown: #4A1C24;
             --cream: #FBF6EF;
-            --accent: #8B7355;
+            --light-red: #F4CCCC;
         }
         
         * {
@@ -28,7 +28,7 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            color: var(--deep-navy);
+            color: var(--dark-red-brown);
             background: var(--cream);
             line-height: 1.6;
             overflow-x: hidden;
@@ -43,8 +43,8 @@
             height: 100%;
             z-index: -1;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(139, 115, 85, 0.06) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(196, 30, 58, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 30, 63, 0.06) 0%, transparent 50%);
             animation: subtleShift 20s ease-in-out infinite;
         }
         
@@ -61,7 +61,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            border-bottom: 1px solid rgba(196, 30, 58, 0.2);
             animation: slideDown 0.6s ease-out;
         }
         
@@ -75,12 +75,12 @@
             font-size: 1.8rem;
             font-weight: 300;
             letter-spacing: 2px;
-            color: var(--deep-navy);
+            color: var(--dark-red-brown);
         }
         
         .logo strong {
             font-weight: 600;
-            color: var(--gold);
+            color: var(--cardinal-red);
         }
         
         /* Hero Section */
@@ -108,21 +108,21 @@
             font-weight: 300;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            color: var(--deep-navy);
+            color: var(--dark-red-brown);
             letter-spacing: -1px;
         }
         
         .hero h1 strong {
             display: block;
             font-weight: 600;
-            color: var(--gold);
+            color: var(--cardinal-red);
             font-size: 1.2em;
         }
         
         .hero-tagline {
             font-size: 1.3rem;
             font-weight: 300;
-            color: var(--accent);
+            color: var(--deep-burgundy);
             margin-bottom: 2.5rem;
             font-style: italic;
             animation: fadeInUp 0.8s ease-out 0.4s both;
@@ -131,7 +131,7 @@
         .hero-description {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: var(--slate);
+            color: var(--dark-red-brown);
             margin-bottom: 3rem;
             max-width: 700px;
             animation: fadeInUp 0.8s ease-out 0.6s both;
@@ -140,7 +140,7 @@
         /* Expertise Cards */
         .expertise {
             padding: 5rem 5%;
-            background: linear-gradient(to bottom, var(--cream) 0%, rgba(247, 231, 206, 0.3) 100%);
+            background: linear-gradient(to bottom, var(--cream) 0%, rgba(244, 204, 204, 0.2) 100%);
         }
         
         .section-title {
@@ -149,7 +149,7 @@
             font-weight: 300;
             text-align: center;
             margin-bottom: 4rem;
-            color: var(--deep-navy);
+            color: var(--dark-red-brown);
             animation: fadeInUp 0.8s ease-out;
         }
         
@@ -166,7 +166,7 @@
             backdrop-filter: blur(10px);
             padding: 2.5rem;
             border-radius: 2px;
-            border: 1px solid rgba(201, 169, 97, 0.3);
+            border: 1px solid rgba(196, 30, 58, 0.3);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -185,7 +185,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--accent));
+            background: linear-gradient(90deg, var(--cardinal-red), var(--coral-red));
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
@@ -193,8 +193,8 @@
         
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(26, 35, 50, 0.15);
-            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(196, 30, 58, 0.2);
+            border-color: var(--cardinal-red);
         }
         
         .card:hover::before {
@@ -212,11 +212,11 @@
             font-size: 1.6rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--deep-navy);
+            color: var(--dark-red-brown);
         }
         
         .card p {
-            color: var(--slate);
+            color: var(--dark-red-brown);
             line-height: 1.7;
             font-size: 0.95rem;
         }
@@ -238,13 +238,13 @@
             font-size: 2.5rem;
             font-weight: 300;
             margin-bottom: 2rem;
-            color: var(--deep-navy);
+            color: var(--dark-red-brown);
         }
         
         .about p {
+            color: var(--dark-red-brown);
             font-size: 1.1rem;
-            line-height: 1.9;
-            color: var(--slate);
+            line-height: 1.8;
             margin-bottom: 1.5rem;
         }
         
@@ -254,7 +254,7 @@
             gap: 2rem;
             margin-top: 2.5rem;
             padding-top: 2.5rem;
-            border-top: 1px solid rgba(201, 169, 97, 0.3);
+            border-top: 1px solid rgba(196, 30, 58, 0.3);
         }
         
         .credential {
@@ -264,7 +264,7 @@
         
         .credential-title {
             font-weight: 600;
-            color: var(--gold);
+            color: var(--cardinal-red);
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -272,14 +272,14 @@
         }
         
         .credential-value {
-            color: var(--deep-navy);
+            color: var(--dark-red-brown);
             font-size: 1.1rem;
         }
         
         /* CTA Section */
         .cta {
             padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--slate) 100%);
+            background: linear-gradient(135deg, var(--dark-red-brown) 0%, var(--deep-burgundy) 100%);
             color: white;
             text-align: center;
         }
@@ -305,23 +305,23 @@
         .cta-button {
             display: inline-block;
             padding: 1.2rem 3rem;
-            background: var(--gold);
-            color: var(--deep-navy);
+            background: var(--cardinal-red);
+            color: white;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             border-radius: 2px;
             transition: all 0.3s ease;
-            border: 2px solid var(--gold);
+            border: 2px solid var(--cardinal-red);
             letter-spacing: 1px;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
         .cta-button:hover {
-            background: transparent;
-            color: var(--gold);
+            background: var(--coral-red);
+            border-color: var(--coral-red);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.4);
         }
         
         /* Contact Info */
@@ -343,26 +343,26 @@
         }
         
         .contact-item a {
-            color: var(--champagne);
+            color: var(--light-red);
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .contact-item a:hover {
-            color: var(--gold);
+            color: var(--coral-red);
         }
         
         /* Footer */
         footer {
             padding: 2rem 5%;
-            background: var(--deep-navy);
+            background: var(--dark-red-brown);
             color: rgba(255, 255, 255, 0.7);
             text-align: center;
             font-size: 0.9rem;
         }
         
         footer a {
-            color: var(--gold);
+            color: var(--cardinal-red);
             text-decoration: none;
         }
         
@@ -459,8 +459,8 @@
                 
                 <div class="credentials">
                     <div class="credential">
-                        <div class="credential-title">Background</div>
-                        <div class="credential-value">Former CEO, Non-Profit Sector</div>
+                        <div class="credential-title">Name</div>
+                        <div class="credential-value">Jean-Francois (JF) Champagne, CAE</div>
                     </div>
                     <div class="credential">
                         <div class="credential-title">Focus Areas</div>
