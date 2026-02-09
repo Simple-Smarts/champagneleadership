@@ -8,7 +8,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -18,6 +18,10 @@
             --dark-red-brown: #4A1C24;
             --cream: #FBF6EF;
             --light-red: #F4CCCC;
+            
+            /* Font variables */
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         
         * {
@@ -27,10 +31,10 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-body);
             color: var(--dark-red-brown);
             background: var(--cream);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
         }
         
@@ -70,7 +74,7 @@
             to { transform: translateY(0); opacity: 1; }
         }
         
-        /* Logo Container - MOVED OUTSIDE MEDIA QUERY */
+        /* Logo Container - Kept but hidden */
         .logo-container {
             display: flex;
             align-items: center;
@@ -82,6 +86,8 @@
             width: auto;
             flex-shrink: 0;
             transition: transform 0.3s ease;
+            /* Hidden for now */
+            display: none;
         }
         
         .logo-icon:hover {
@@ -89,16 +95,16 @@
         }
         
         .logo-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 300;
+            font-family: var(--font-heading);
+            font-size: 1.7rem;
+            font-weight: 400;
             letter-spacing: 2px;
             color: var(--dark-red-brown);
             line-height: 1.2;
         }
         
         .logo-text strong {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--cardinal-red);
         }
         
@@ -122,9 +128,9 @@
         }
         
         .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 300;
+            font-family: var(--font-heading);
+            font-size: clamp(2.3rem, 6vw, 4.5rem);
+            font-weight: 400;
             line-height: 1.1;
             margin-bottom: 1.5rem;
             color: var(--dark-red-brown);
@@ -133,12 +139,13 @@
         
         .hero h1 strong {
             display: block;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--cardinal-red);
             font-size: 1.2em;
         }
         
         .hero-tagline {
+            font-family: var(--font-body);
             font-size: 1.3rem;
             font-weight: 300;
             color: var(--deep-burgundy);
@@ -148,6 +155,7 @@
         }
         
         .hero-description {
+            font-family: var(--font-body);
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--dark-red-brown);
@@ -163,9 +171,9 @@
         }
         
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 300;
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            font-weight: 400;
             text-align: center;
             margin-bottom: 4rem;
             color: var(--dark-red-brown);
@@ -227,7 +235,7 @@
         }
         
         .card h3 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-heading);
             font-size: 1.6rem;
             font-weight: 600;
             margin-bottom: 1rem;
@@ -235,6 +243,7 @@
         }
         
         .card p {
+            font-family: var(--font-body);
             color: var(--dark-red-brown);
             line-height: 1.7;
             font-size: 0.95rem;
@@ -253,14 +262,15 @@
         }
         
         .about h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 300;
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 400;
             margin-bottom: 2rem;
             color: var(--dark-red-brown);
         }
         
         .about p {
+            font-family: var(--font-body);
             color: var(--dark-red-brown);
             font-size: 1.1rem;
             line-height: 1.8;
@@ -282,6 +292,7 @@
         }
         
         .credential-title {
+            font-family: var(--font-body);
             font-weight: 600;
             color: var(--cardinal-red);
             margin-bottom: 0.5rem;
@@ -291,6 +302,7 @@
         }
         
         .credential-value {
+            font-family: var(--font-body);
             color: var(--dark-red-brown);
             font-size: 1.1rem;
         }
@@ -304,14 +316,15 @@
         }
         
         .cta h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 300;
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            font-weight: 400;
             margin-bottom: 1.5rem;
             animation: fadeInUp 0.8s ease-out;
         }
         
         .cta p {
+            font-family: var(--font-body);
             font-size: 1.2rem;
             margin-bottom: 3rem;
             opacity: 0.9;
@@ -322,6 +335,7 @@
         }
         
         .cta-button {
+            font-family: var(--font-body);
             display: inline-block;
             padding: 1.2rem 3rem;
             background: var(--cardinal-red);
@@ -354,6 +368,7 @@
         }
         
         .contact-item {
+            font-family: var(--font-body);
             display: flex;
             align-items: center;
             gap: 0.8rem;
@@ -388,7 +403,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
             }
             
             .hero-tagline {
@@ -396,7 +411,7 @@
             }
             
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .cards-grid {
@@ -418,7 +433,7 @@
             }
             
             .logo-text {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
             
             header {
@@ -436,7 +451,7 @@
             }
             
             .logo-text {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 letter-spacing: 1px;
             }
         }
@@ -447,7 +462,8 @@
     
     <header>
         <div class="logo-container">
-            <img src="CL_Ampoule_coul.png" alt="Champagne Leadership lightbulb icon" class="logo-icon">
+            <!-- Logo hidden but code kept for future use -->
+            <!-- <img src="CL_Ampoule_web.png" alt="Champagne Leadership lightbulb icon" class="logo-icon"> -->
             <div class="logo-text">
                 <strong>CHAMPAGNE</strong> Leadership & Consulting
             </div>
@@ -551,4 +567,3 @@
     </footer>
 </body>
 </html>
-
