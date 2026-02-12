@@ -108,17 +108,18 @@
             color: var(--cardinal-red);
         }
         
-        /* Hero Section */
+        /* Hero Section - Updated with photo */
         .hero {
             min-height: 85vh;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
             padding: 4rem 5%;
             position: relative;
         }
         
         .hero-content {
-            max-width: 900px;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
         
@@ -127,9 +128,45 @@
             to { transform: translateY(0); opacity: 1; }
         }
         
+        /* Presentation photo section */
+        .hero-image {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .presentation-photo {
+            width: 100%;
+            height: 600px;
+            background: var(--deep-burgundy);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(196, 30, 58, 0.3);
+            box-shadow: 0 10px 40px rgba(196, 30, 58, 0.15);
+        }
+        
+        .presentation-photo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cardinal-red), var(--coral-red));
+            z-index: 2;
+        }
+        
+        .presentation-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: clamp(2.3rem, 6vw, 4.5rem);
+            font-size: clamp(2.3rem, 5vw, 4rem);
             font-weight: 400;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -149,19 +186,16 @@
             font-size: 1.3rem;
             font-weight: 300;
             color: var(--deep-burgundy);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             font-style: italic;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
         .hero-description {
             font-family: var(--font-body);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
             color: var(--dark-red-brown);
-            margin-bottom: 3rem;
-            max-width: 700px;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
+            margin-bottom: 2rem;
         }
         
         /* Expertise Cards */
@@ -337,7 +371,7 @@
         .cta-button {
             font-family: var(--font-body);
             display: inline-block;
-            padding: 1.2rem 3rem;
+            padding: 1.2rem 2.5rem;
             background: var(--cardinal-red);
             color: white;
             text-decoration: none;
@@ -347,7 +381,6 @@
             transition: all 0.3s ease;
             border: 2px solid var(--cardinal-red);
             letter-spacing: 1px;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
         .cta-button:hover {
@@ -357,50 +390,48 @@
             box-shadow: 0 10px 30px rgba(196, 30, 58, 0.4);
         }
         
-        /* Contact Info */
-        .contact-info {
+        .cta-buttons {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
-        .contact-item {
-            font-family: var(--font-body);
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-        }
-        
-        .contact-item a {
-            color: var(--light-red);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .contact-item a:hover {
-            color: var(--coral-red);
-        }
-        
-        /* Footer */
+        /* Simplified Footer */
         footer {
-            padding: 2rem 5%;
+            padding: 2.5rem 5%;
             background: var(--dark-red-brown);
             color: rgba(255, 255, 255, 0.7);
             text-align: center;
-            font-size: 0.9rem;
         }
         
-        footer a {
-            color: var(--cardinal-red);
-            text-decoration: none;
+        .footer-simple {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-simple p {
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         
         /* Responsive */
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-image {
+                order: -1;
+            }
+            
+            .presentation-photo {
+                height: 500px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.3rem;
@@ -422,9 +453,8 @@
                 flex-direction: column;
             }
             
-            .contact-info {
-                flex-direction: column;
-                gap: 1.5rem;
+            .presentation-photo {
+                height: 400px;
             }
             
             /* Mobile logo adjustments */
@@ -453,6 +483,10 @@
             .logo-text {
                 font-size: 1.1rem;
                 letter-spacing: 1px;
+            }
+            
+            .presentation-photo {
+                height: 350px;
             }
         }
     </style>
@@ -489,6 +523,13 @@
                 <p class="hero-description">
                     Transform your organization through expert governance, visionary leadership, and strategic technology implementation. With deep experience as a former CEO of non-profit organizations, I bring practical wisdom and forward-thinking solutions to boards and executive teams.
                 </p>
+            </div>
+            
+            <!-- Presentation photo -->
+            <div class="hero-image">
+                <div class="presentation-photo">
+                    <img src="250906-Website_Carquest-0263.jpg" alt="JF Champagne presenting at an industry event" loading="lazy">
+                </div>
             </div>
         </section>
         
@@ -551,27 +592,25 @@
         <section class="cta">
             <h2>Let's Elevate Your Leadership</h2>
             <p>Ready to transform your board or organization? Let's discuss how we can work together to achieve your strategic goals.</p>
-            <a href="mailto:jf@champagneleadership.ca" class="cta-button">Get In Touch</a>
             
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>📧</span>
-                    <a href="mailto:jf@champagneleadership.ca">jf@champagneleadership.ca</a>
-                </div>
-                <div class="contact-item">
-                    <span>🌐</span>
-                    <span>champagneleadership.ca</span>
-                </div>
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span>Ottawa, Ontario, Canada</span>
-                </div>
+            <div class="cta-buttons">
+                <a href="https://linkedin.com/in/jfchampagne" class="cta-button" target="_blank" rel="noopener">
+                    Connect on LinkedIn
+                </a>
+                <a href="mailto:jf@champagneleadership.ca" class="cta-button">
+                    Send an Email
+                </a>
             </div>
         </section>
     </main>
     
+    <!-- Simplified footer -->
     <footer>
-        <p>&copy; 2026 Champagne Leadership & Consulting. All rights reserved.</p>
+        <div class="footer-simple">
+            <p style="margin-bottom: 0.5rem;"><strong style="color: white;">Champagne Leadership & Consulting</strong></p>
+            <p style="margin-bottom: 1rem;">📧 jf@champagneleadership.ca  |  📍 Ottawa, Ontario, Canada</p>
+            <p>&copy; 2026 Champagne Leadership & Consulting. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
